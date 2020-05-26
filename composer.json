@@ -1,0 +1,32 @@
+{
+    "name": "asgrim/class-api-dumper",
+    "description": "Small tool to dump a summary of a class's API",
+    "type": "project",
+    "require": {
+        "php": ">=7.4.0,<7.5.0",
+        "roave/better-reflection": "^4.2",
+        "symfony/console": "^5.0",
+        "webmozart/assert": "^1.8"
+    },
+    "require-dev": {
+        "doctrine/coding-standard": "^7.0",
+        "phpunit/phpunit": "^9.1",
+        "roave/security-advisories": "dev-master",
+        "vimeo/psalm": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Asgrim\\ClassApiDumper\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Titcumb",
+            "email": "james@asgrim.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    }
+}

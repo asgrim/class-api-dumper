@@ -20,3 +20,13 @@ Asgrim\ClassApiDumper\Command\DumpClassApi
   ->configure() : void
   ->execute(Symfony\Component\Console\Input\InputInterface $input, Symfony\Component\Console\Output\OutputInterface $output) : int
 ```
+
+## Making releases
+
+Note: should be automated in future...
+
+ - `phive install`
+ - `tools/box compile`
+ - `git tag -s <version>`
+ - `git push origin <version>`
+ - Make release on GitHub, upload `class-api-dumper.phar`

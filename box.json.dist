@@ -1,0 +1,4 @@
+{
+    "main": "bin/class-api-dumper.php",
+    "output": "class-api-dumper.phar"
+}

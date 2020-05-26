@@ -78,8 +78,10 @@ final class DumpClassApi extends Command
         Assert::stringNotEmpty($realPath);
 
         $formatter = $output->getFormatter();
-        $formatter->setStyle('class', new OutputFormatterStyle('green', 'black', ['bold']));
-        $formatter->setStyle('method', new OutputFormatterStyle('green', 'black', []));
+        $formatter->setStyle('class', new OutputFormatterStyle('green', null, ['bold']));
+        $formatter->setStyle('method', new OutputFormatterStyle('red', null, []));
+        $formatter->setStyle('type', new OutputFormatterStyle('cyan', null, []));
+        $formatter->setStyle('parameter', new OutputFormatterStyle('yellow', null, []));
 
         $betterReflection  = new BetterReflection();
         $pathSourceLocator = new DirectoriesSourceLocator([$realPath], $betterReflection->astLocator());
@@ -105,7 +107,7 @@ final class DumpClassApi extends Command
 
             foreach ($reflectionClass->getImmediateMethods(ReflectionMethod::IS_PUBLIC) as $reflectionMethod) {
                 $output->writeln(sprintf(
-                    '  %s<method>%s</method>(%s) : %s',
+                    '  %s<method>%s</method>(%s) : <type>%s</type>',
                     $reflectionMethod->isStatic() ? '::' : '->',
                     $reflectionMethod->getName(),
                     implode(
@@ -113,7 +115,7 @@ final class DumpClassApi extends Command
                         array_map(
                             static function (ReflectionParameter $reflectionParameter) : string {
                                 return trim(sprintf(
-                                    '%s $%s',
+                                    '<type>%s</type> <parameter>$%s</parameter>',
                                     (string) $reflectionParameter->getType(),
                                     $reflectionParameter->getName()
                                 ));

@@ -2,8 +2,16 @@
 
 Take a path, dump its class API. Just a quick tool.
 
+## Installation/Usage
+
+ - Visit https://github.com/asgrim/class-api-dumper/releases
+ - Download the PHAR for the latest release
+ - Run it like `php class-api-dumper.phar dump-class-api <path>`
+
+### Example
+
 ```
-$ bin/class-api-dumper dump-class-api src
+$ php class-api-dumper.phar dump-class-api src
 ====================================================================================
 List of classes and their public API in : /home/james/workspace/class-api-dumper/src
 ====================================================================================

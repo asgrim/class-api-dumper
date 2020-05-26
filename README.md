@@ -10,6 +10,8 @@ Take a path, dump its class API. Just a quick tool.
 
 ### Example
 
+![Screenshot of example with colours in console](docs/example.png)
+
 ```
 $ php class-api-dumper.phar dump-class-api src
 ====================================================================================
